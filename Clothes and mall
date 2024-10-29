@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiyim Do'koni</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kiyim Do'koni</h1>
+    </header>
+    <main>
+        <section id="products">
+            <h2>Mahsulotlar</h2>
+            <div class="product">
+                <h3>T-shir</h3>
+                <p>Narxi: 20 000 so'm</p>
+                <button onclick="addToCart('T-shir')">Savatchaga qo'shish</button>
+            </div>
+            <div class="product">
+                <h3>Jeans</h3>
+                <p>Narxi: 50 000 so'm</p>
+                <button onclick="addToCart('Jeans')">Savatchaga qo'shish</button>
+            </div>
+        </section>
+        <section id="cart">
+            <h2>Savatcha</h2>
+            <ul id="cartItems"></ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.product {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#cart {
+    margin-top: 40px;
+}
+</html>
+function addToCart(productName) {
+    const cartItems = document.getElementById('cartItems');
+    const newItem = document.createElement('li');
+    newItem.textContent = productName;
+    cartItems.appendChild(newItem);
+    alert(productName + ' savatchaga qo\'shildi!');
+}
